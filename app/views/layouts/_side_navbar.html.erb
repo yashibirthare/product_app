@@ -1,0 +1,29 @@
+
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li>
+         <a href="#">Home</a>
+      </li>
+      <li class="dropdown">
+        <a href="#">Categories</a>
+        <ul class="dropdown-submenu" role="menu">
+          <% @categories.each do |category| %>
+            <li class="dropdown">
+         
+                <%= link_to category["attributes"]["name"],homes_path(category) %>
+             
+              <ul class="dropdown-submenu" role="menu">
+                <% category["attributes"]["sub-categories"].each do |sub_cat| %>
+                  <li>
+                      <%= link_to sub_cat["name"],homes_path(sub_cat) %> 
+                  
+                  </li>
+                <% end %>
+              </ul>
+            </li> 
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+</div>

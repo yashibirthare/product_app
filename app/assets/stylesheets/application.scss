@@ -1,0 +1,189 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ 
+ */
+
+ @import "bootstrap";
+
+
+.btn-logout {
+    margin-left: 5em;
+}
+
+/*login page*/
+
+.user_card {
+    height: 440px;
+    width: 350px;
+    margin-top: 5em;
+    margin-bottom: auto;
+    background: #f39c12;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+}
+.form_container {
+    margin-top: 40px;
+}
+
+.input-group-text {
+    background: #c0392b !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+    height: 30px;
+}
+.custom-control-input:checked~.custom-control-label::before {
+    background-color: #c0392b !important;
+}
+.login_heading {
+    color: #c0392b;
+    margin-top: 1.5em;
+}
+/*//login page*/
+
+/*sidebar*/
+
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #003a40;
+  border-right: 4px solid #5cb03b;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+#sidebar-wrapper {
+  width: 250px;
+}
+
+
+/* Sidebar Styles */
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sidebar-nav li {
+  background-color: #003a40;
+}
+.sidebar-nav li a {
+  display: block;
+  padding: 7px 10px;
+  text-decoration: none;
+  color: #d9e2e3;
+}
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+.sidebar-nav li.active > a {
+  background: #5cb03b;
+  color: #ffffff;
+}
+.sidebar-nav li.parent > a {
+  background: #002c31;
+  color: #ffffff;
+}
+.sidebar-nav .dropdown li {
+  text-indent: 30px;
+}
+.sidebar-nav .dropdown .dropdown-icon {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  z-index: 2000;
+}
+.sidebar-nav .dropdown .dropdown-submenu {
+  list-style: none;
+  padding-left: 0;
+}
+.sidebar-nav .dropdown .dropdown-submenu li {
+  text-indent: 10px;
+}
+.sidebar-nav .dropdown .dropdown-submenu .dropdown-submenu li {
+  text-indent: 20px;
+}
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+@media (min-width: 768px) {
+  
+  #wrapper.toggled {
+    padding-left: 0;
+  }
+  #sidebar-wrapper {
+    width: 250px;
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0;
+  }
+}
+/**/
+
+/*profile*/
+.card{
+  margin-left: 10rem;
+  margin-top: 3em;
+}
+input {
+  width: 300px;
+  margin-left: 3em;
+  margin-bottom: 1em;
+}
+label{
+  margin-left: 1em;
+  margin-right: 1em;
+}
+textarea {
+  width: 300px;
+  margin-left: 2em;
+  margin-bottom: 1em;
+}
+
+/**/
+.btn-space{
+  
+  margin-left: 1em;
+}

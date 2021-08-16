@@ -1,0 +1,62 @@
+
+
+<% if user_signed_in? %>
+
+  <header>
+      <%= render 'layouts/navigation' %>
+      <nav>
+      <%= render 'layouts/side_navbar'%>
+      </nav>
+  </header>
+  <div class="container">
+    <center><h2 class="card-title">Products</h2></center>
+    <div class="row">
+
+    <% @products.each do |product| %>
+    <div class="col-md-4">
+    <div class="card" style="width: 14rem;margin-left: 12rem;margin-top: 1.5em;">
+      <div class="card-body">
+        <center><h5 class="card-title">Product</h5></center>
+        <br>
+        <h5>Name:</h5>
+        <p><%= product["attributes"]["name"] %></p>
+        <h5>Price:</h5>
+        <p><%= product["attributes"]["price"] %></p>
+        <% if product["attributes"]["quantity"].to_i.zero? %>
+        
+          <% unless current_user.wishlists.pluck(:product_id).include?(product["id"]) %>
+            <%= link_to 'Add to Wishlist', '/wishlists?product_id=' + product["id"],method: :post, class: "btn btn-outline-success" %>
+          <% else%>
+            <p>Added to Wishlist</p>
+          <% end %>
+
+        <% else %>
+
+          <% unless current_user.carts.pluck(:product_id).include?(product["id"]) %>
+            <%= link_to 'Add to Cart', '/carts?product_id=' + product["id"],method: :post, class: "btn btn-outline-success" %>
+          <% else%>
+            <p>Added to Cart</p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    </div>
+    
+    <% end %>
+  </div>
+  </div>
+  
+
+<% else %>
+  <header>
+      <%= render 'layouts/header' %>
+  </header>
+
+  <li>
+  <%= link_to('Login', new_user_session_path) %>  
+  </li>
+  <li>
+    <%= link_to('SignUp', new_user_registration_path) %>
+  </li>
+  
+<% end %>

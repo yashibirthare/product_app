@@ -1,0 +1,64 @@
+<header>
+  <%= render 'layouts/navigation' %>
+</header>
+
+<!-- <h2>Edit <= resource_name.to_s.humanize %> Profile</h2> -->
+<div class="card" style="width: 40rem;">
+  <div class="card-body">
+    <center><h5 class="card-title">Edit <%= resource_name.to_s.humanize %> Profile</h5></center>
+    <br>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <label><%= f.label :email %></label>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field">
+        <label><%= f.label :name %></label>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      </div>
+
+      <div class="field">
+        <label><%= f.label :phone %></label>
+        <%= f.telephone_field :phone, autofocus: true, autocomplete: "phone" %>
+      </div>
+
+      <div class="field">
+        <label><%= f.label :profile_img %></label>
+        <!--  <= image_tag @user.profile_img, style: "width:50px;" %> -->
+        <%= f.file_field :profile_img %>
+      </div>
+
+      <div class="field">
+        <label><%= f.label :address %></label>
+        <%= f.text_area :address, autofocus: true, autocomplete: "address" %>
+      </div>
+  
+      <div class="field">
+        <label><%= f.label :current_password %></label>
+        <br> <i>(we need your current password to confirm your changes)</i>
+        <br>
+        <%= f.password_field :current_password, autocomplete: "current-password" %>
+      </div> 
+      <br>
+      <div class="actions">
+        <center><button class="btn btn-outline-success my-2 my-sm-0" name="submit">
+          Update Profile
+        </button></center>
+        <!-- <= f.submit "Update Profile" %> -->
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- <h3>Cancel my account</h3>
+
+<p>Unhappy? <= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p> -->
+
+<%= link_to "Back", :back %>
