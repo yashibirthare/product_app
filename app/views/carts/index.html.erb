@@ -10,6 +10,7 @@
     <tr>
       <th scope="col">Product Name</th>
       <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -22,13 +23,17 @@
         <% if product["id"] == cart.product_id %>
           <td><%= product["attributes"]["name"] %></td>
           <td><%= product["attributes"]["price"] %></td>
+          <td><%= number_field_tag :quantity, in: 1..10 %></td>
           <td><%= link_to "Remove", cart, method: :delete, data: { confirm: "Are you sure?" } %></td>
           
         <% end %>
       <% end %>
     </tr>
     <% end %>
- 
+    <tr>
+      <td>Total</td>
+      <td></td>
+    </tr>
   </tbody>
 </table>
 </center>

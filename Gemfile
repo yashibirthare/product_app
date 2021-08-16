@@ -9,6 +9,8 @@ gem 'rails', '~> 6.1.4'
 gem 'devise'
 #letter_opner
 gem "letter_opener", group: :development
+#razorpay for payment
+gem 'razorpay'
 #bootstrap gem
 gem 'bootstrap', '~> 5.0.1'
 gem 'jquery-rails'
