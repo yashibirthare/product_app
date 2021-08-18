@@ -19,6 +19,13 @@ class FetchDataService
 		parse_response
 	end
 
+	def get_product_ids(id)
+		uri = URI.parse(@base_url + '/products?id=' + id.to_s)
+		@response = Net::HTTP.get(uri)
+		
+		parse_response
+	end
+
 	private
 	def parse_response
 		JSON.parse(@response)['data']

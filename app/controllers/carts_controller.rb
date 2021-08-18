@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
 	def index
-		@products = FetchDataService.new.get_products(params[:category_id])
+		@products = FetchDataService.new.get_product_ids(params[:id])
 		@carts = current_user.carts.all
 	end
 

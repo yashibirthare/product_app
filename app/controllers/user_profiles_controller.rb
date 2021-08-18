@@ -16,5 +16,8 @@ class UserProfilesController < ApplicationController
       render text: "ok"
     end
   end
+
+  
+  
     
 end
